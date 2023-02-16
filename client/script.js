@@ -85,7 +85,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   // const response = await fetch('https://codex-im0y.onrender.com/', {
-  const response = await fetch("http://localhost:3000", {
+  const response = await fetch("http://34.16.134.84:3000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
