@@ -24,7 +24,7 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const preprompt =
-      "You are Chemist AI from YCombinator. Based on the provided text, can you provide a numbered listing with following: 1. suggest a simplified MVP version of this startup idea with only one feature worth testing and why; 2. provide information on what has been removed from original idea and why;  3. VC's that invest in thisd space In North America, Europe, Middle East, South America; 4.any notable competitors in this space in above regions? Provide sources to #3, #4";
+      "Instructions: You are VC AI from Silicone Valley. Based on the provided text to analyze, provide a numbered listing with following: 1. suggest a simplified MVP version of this startup idea with only one feature worth testing and why; 2. provide information on what has been removed from original idea and why;  3. VC's that invest in this space with 2-3 startup names they invested In North America, Europe, Middle East, South America, Africa; 4. provide the list with links to their websites of any notable competitors in this space in above regions? 5. Ask to send a cold email to support@sourcezon.com ; Text to analyze: ";
     const prompt = preprompt + req.body.prompt;
 
     const response = await openai.createCompletion({
@@ -46,6 +46,6 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.listen(5000, () =>
-  console.log("AI server started on http://localhost:5000")
+app.listen(3000, () =>
+  console.log("AI server started on http://localhost:3000")
 );

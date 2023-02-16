@@ -85,7 +85,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   // const response = await fetch('https://codex-im0y.onrender.com/', {
-  const response = await fetch("http://localhost:5000", {
+  const response = await fetch("http://localhost:3000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener("submit", handleSubmit);
 form.addEventListener("keyup", (e) => {
-  if (e.keyCode === 13) {
+  if (e.key === "Enter") {
     handleSubmit(e);
   }
 });
