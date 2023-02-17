@@ -1,4 +1,5 @@
-import bot from "./assets/bot.svg";
+// import bot from "./assets/bot.svg";
+import bot from "./assets/Chatel.svg";
 import user from "./assets/user.svg";
 
 const form = document.querySelector("form");
@@ -84,7 +85,7 @@ const handleSubmit = async (e) => {
   // messageDiv.innerHTML = "..."
   loader(messageDiv);
 
-  // const response = await fetch('https://codex-im0y.onrender.com/', {
+  // const response = await fetch('https://localhost:3000/', {
   const response = await fetch("http://34.16.134.84:3000", {
     method: "POST",
     headers: {
