@@ -17,15 +17,17 @@ app.use(express.json());
 
 app.get("/", async (req, res) => {
   res.status(200).send({
-    message: "Hello from CodeX!",
+    message: "Hello from Chatel!",
   });
 });
 
 app.post("/", async (req, res) => {
   try {
     const preprompt =
-      "Instructions: You are VC AI from Silicone Valley. Based on the provided text to analyze, provide a numbered listing with following: 1. suggest a simplified MVP version of this startup idea with only one feature worth testing and why; 2. provide information on what has been removed from original idea and why;  3. VC's that invest in this space with 2-3 startup names they invested In North America, Europe, Middle East, South America, Africa; 4. provide the list with links to their websites of any notable competitors in this space in above regions? 5. Ask to send a cold email to support@sourcezon.com ; Text to analyze: ";
+      "Instructions: You are VC AI from Silicone Valley. Based on the provided text to analyze, provide a numbered listing with following: 1. simplified MVP version of this startup idea with only one feature worth testing and why; 2. information on what has been removed from original idea and why;  3. VC's that invest in this space with 2-3 startup names they invested In North America, Europe, Middle East, South America, Africa; 4. provide the list with links to their websites of any notable competitors in this space in above regions? Text to analyze: ";
     const prompt = preprompt + req.body.prompt;
+    console.log('idea', prompt);
+
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
@@ -36,6 +38,9 @@ app.post("/", async (req, res) => {
       frequency_penalty: 0.5, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
       presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
     });
+
+    console.log('response', response.data.choices[0].text);
+    console.log()
 
     res.status(200).send({
       bot: response.data.choices[0].text,
