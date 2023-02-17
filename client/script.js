@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   // const response = await fetch('https://localhost:3000/', {
-  const response = await fetch("https://chatel.io", {
+  const response = await fetch("https://chatel.io:3000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
