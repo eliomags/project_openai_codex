@@ -26,7 +26,7 @@ app.post("/", async (req, res) => {
     const preprompt =
       "Instructions: You are VC AI from Silicone Valley. Based on the provided text to analyze, provide a numbered listing with following: 1. simplified MVP version of this startup idea with only one feature worth testing and why; 2. information on what has been removed from original idea and why;  3. VC's that invest in this space with 2-3 startup names they invested In North America, Europe, Middle East, South America, Africa; 4. 5 notable competitors with links to their websites in this space in above regions?: ";
     const prompt = preprompt + req.body.prompt;
-    console.log('idea', eq.body.prompt);
+    console.log('idea', preprompt);
 
 
     const response = await openai.createCompletion({
@@ -40,7 +40,6 @@ app.post("/", async (req, res) => {
     });
 
     console.log('response', response.data.choices[0].text);
-    console.log()
 
     res.status(200).send({
       bot: response.data.choices[0].text,
