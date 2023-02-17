@@ -122,6 +122,7 @@ form {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 textarea {
@@ -147,4 +148,9 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+.span {
+  color: #dcdcdc;
+
 }
