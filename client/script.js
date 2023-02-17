@@ -107,7 +107,7 @@ const handleSubmit = async (e) => {
   } else {
     const err = await response.text();
 
-    messageDiv.innerHTML = "Something went wrong";
+    messageDiv.innerHTML = "Oopsie daisy! Looks like something went a bit haywire. No need to panic though, just give that refresh button a little tap and give it another go. \n Oh, and one quick thing to keep in mind: we're all about startup ideas around here, so just make sure your questions are related to that. But we're sure you knew that already, right? 😉";
     alert(err);
   }
 };
