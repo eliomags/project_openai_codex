@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "lsof -ti:3000 | xargs kill -9 ; nodemon server"
+    "server": "nodemon server"
   },
   "dependencies": {
     "cors": "^2.8.5",
